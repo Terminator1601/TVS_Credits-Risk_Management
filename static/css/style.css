@@ -1,0 +1,67 @@
+body{
+  background-color: #DFEADA;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+.containeer {
+    max-width: 500px;
+    width: 50%;
+    margin-top: 5rem !important;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+}
+
+/* Apply styles to headings */
+.heading {
+    text-align: center;
+    color: #007bff;
+    margin: 20px 0px;
+}
+
+/* Apply styles to labels and select elements */
+label, select {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Apply styles to input elements */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Apply styles to the submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Style the submit button on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Apply styles to form container */
+
