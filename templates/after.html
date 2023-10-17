@@ -1,5 +1,3 @@
-<!-- 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -33,71 +32,25 @@
     <div class="confirmation">
       <h1 class="confirmation-head">Loan Prediction Result</h1>
       <hr />
+      <img
+        src="{{ url_for('static', filename='assets/giffy.gif') }}"
+        class="giffy"
+        alt="gif"
+        draggable="false"
+      />
 
-      {% if prediction_result == "approved" %}
+      {% if status == 'approved' %}
       <p class="confirmation-text">
         Congratulations! Your loan application has been approved.
       </p>
-      {% else %}
-      <h3 class="confirmation-text">Loan approval status is not available.</h3>
-      <h3 class="solution">But we have solution some solutions for you.</h3>
-      <a href="/solution">Show solutions</a>
-
-
-
-      {% endif %}
-
-      <a href="/">Go back</a>
-    </div>
-  </body>
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Young+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='css/style_for_after.css')}}"
-    />
-    <link
-      rel="shortcut icon"
-      href="{{url_for('static',filename='assets/logo.png')}}"
-      type="image/x-icon"
-    />
-    <title>TVS Credits - Risks Management</title>
-  </head>
-  <body>
-    <div class="main-image">
-      <img
-        src="{{ url_for('static', filename='assets/TVS_logo.png') }}"
-        alt="logo"
-        srcset=""
-      />
-    </div>
-    <div class="confirmation">
-      <h1 class="confirmation-head">Loan Prediction Result</h1>
-      <hr />
-    
-      {% if status == 'approved' %}
-        <p class="confirmation-text">
-          Congratulations! Your loan application has been approved.
-        </p>
       {% elif status == 'rejected' %}
-        <p class="confirmation-text">
-          We regret to inform you that your loan application has been rejected.
-          <a href="/solution">Show solutions</a>
-        </p>
+      <p class="confirmation-text">
+        We regret to inform you that your loan application has been rejected.
+        <a href="/solution">Show solutions</a>
+      </p>
       {% endif %}
-    
+
       <a href="/">Go back</a>
     </div>
-    
   </body>
 </html>

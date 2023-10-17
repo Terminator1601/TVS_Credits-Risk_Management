@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
 import sqlite3
@@ -79,16 +79,57 @@ def home():
     return render_template('after.html', status=result)
 
 
-
 @app.route('/solution')
 def solution():
-    result = request.args.get('result')
-    credit_history = request.args.get('credit_history')
-    Loan_Term = request.args.get('Loan_Term')
-    coapplicant_income = request.args.get('coapplicant_income')
+    try:
+        # Connect to the SQLite database.
+        connection = sqlite3.connect(
+        current_Directory + "\\static\\database\\tvs_credit")
+        cursor = connection.cursor()
+
+        # Execute a SQL query to retrieve the latest entry.
+        cursor.execute("SELECT * FROM userData ORDER BY loan_id DESC LIMIT 1")
+        latest_entry = cursor.fetchone()
+
+        if latest_entry:
+            loan_id, name, gender, married_status, dependent, education, employment, property_area, a_income, co_income, loan_amount, loan_amt_term, credit_history, loan_status = latest_entry
+
+            # Close the database connection.
+            connection.close()
+
+            # Create a dictionary to store the latest loan data.
+            latest_loan_data = {
+                'loan_id': loan_id,
+                'name': name,
+                'gender': gender,
+                'married_status': married_status,
+                'dependent': dependent,
+                'education': education,
+                'employment': employment,
+                'property_area': property_area,
+                'a_income': a_income,
+                'co_income': co_income,
+                'loan_amount': loan_amount,
+                'loan_amt_term': loan_amt_term,
+                'credit_history': credit_history,
+                'loan_status': loan_status
+            }
+            money_to_be_lend = int(
+                ((co_income + a_income) * loan_amt_term)/2)
+
+            return render_template('alternative.html',credit_history=credit_history,coapplicant_income=co_income, money_to_be_lend=money_to_be_lend)
+            return jsonify(latest_loan_data)
+
+        else:
+            return jsonify({'error': 'No data found in the database.'}), 404
+
+    except sqlite3.Error as e:
+        return jsonify({'error': 'Database error: ' + str(e)}), 500
+
+
+    # money=coapplicant_income+applicant_income
 
     # Render the 'alternative.html' template and pass the data for display
-    return render_template('alternative.html', result=result, credit_history=credit_history, Loan_Term=Loan_Term, coapplicant_income=coapplicant_income)
 
 
 if __name__ == "__main__":

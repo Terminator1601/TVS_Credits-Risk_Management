@@ -13,9 +13,21 @@ body {
 }
 
 .confirmation-text{
-  font-family: "Young Serif", serif;
+  /* font-family: "Young Serif", serif; */
+  font-family: 'AR One Sans', sans-serif;
+  font-size: 1.5rem;
 
 }
 .solution {
   font-family: "Playfair Display", serif;
 }
+.button{
+  text-align: center;
+  margin-top: 40px;
+  
+}
+
+.giffy{
+  width: 300px;
+}
+

@@ -8,6 +8,9 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@500&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       type="text/css"
@@ -21,27 +24,59 @@
     <title>TVS Credits - Solutions</title>
   </head>
   <body>
-    <div class="main-image">
-      <img
+    <div>
+
+      <div class="main-image">
+        <img
         src="{{ url_for('static', filename='assets/TVS_logo.png') }}"
         alt="logo"
         srcset=""
-      />
-    </div>
-    <div class="confirmation">
+        draggable="false"
+        />
+      </div>
+      <div class="confirmation">
       <h1 class="confirmation-head">Loan Approval Solutions</h1>
       <hr />
-
+      
       <p class="confirmation-text">
         Following are the solutions provided by TVS Credits.
       </p>
-      Credit History: {{ credit_history }}
-      <br />
-      Loan Term: {{ Loan_Term }}
-      <br />
-      Coapplicant Income: {{ coapplicant_income }}
+      <img
+        src="{{ url_for('static', filename='assets/giffy.gif') }}"
+        class="giffy"
+        alt="gif"
+      />
 
-      <a href="/">Go back</a>
+      {% if credit_history is not none and credit_history <= 750 %}
+      <div class="sols">
+        <p class="confirmation-text">
+          <strong>1.</strong> Maximum amount which can be lend is
+          {{money_to_be_lend}}
+        </p>
+        <p class="confirmation-text">
+          <strong>2.</strong> You can change the Co-Applicnt whose annual income <br>
+          is greater than previous i.e., {{coapplicant_income}}.
+        </p>
+      </div>
+      {% else %}
+      <div class="sols">
+        <p class="confirmation-text">
+          <strong>1.</strong> Maximum amount which can be lend is
+          {{money_to_be_lend}}
+        </p>
+        <p class="confirmation-text">
+          <strong>2.</strong> You can change the Co-Applicnt whose annual income <br>
+          is greater than previous i.e., {{coapplicant_income}}.
+        </p>
+      </div>
+
+        {% endif %}
+        <br />
+      <!-- </div>
+      </div> -->
+      <div class="button">
+        <a href="/">Go back</a>
+      </div>
     </div>
   </body>
 </html>

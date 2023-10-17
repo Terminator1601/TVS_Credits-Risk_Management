@@ -18,7 +18,7 @@
             <form method="post" action="/predict">
                 <div class="form-group">
                     <label for="Name">Name:</label>
-                    <input type="text" id="Name" name="Name" required>
+                    <input type="text" placeholder="Enter your full name" id="Name" name="Name" required>
                 </div>
 
                 <div class="form-group">
@@ -41,7 +41,7 @@
 
                 <div class="form-group">
                     <label for="Dependents">Dependents:</label>
-                    <input type="text" id="Dependents" name="Dependents" required>
+                    <input type="text" placeholder="Number of Dependents" id="Dependents" name="Dependents" required>
                 </div>
 
                 <div class="form-group">
@@ -76,27 +76,28 @@
 
                 <div class="form-group">
                     <label for="ApplicantIncome">Applicant Income:</label>
-                    <input type="number" id="ApplicantIncome" name="ApplicantIncome" required>
+                    <input type="number" id="ApplicantIncome" placeholder="Annually" name="ApplicantIncome" required>
                 </div>
 
                 <div class="form-group">
                     <label for="CoapplicantIncome">Coapplicant Income:</label>
-                    <input type="number" id="CoapplicantIncome" name="CoapplicantIncome" required>
+                    <input type="number" id="CoapplicantIncome" placeholder="Annually" name="CoapplicantIncome" required>
                 </div>
 
                 <div class="form-group">
                     <label for="LoanAmount">Loan Amount:</label>
-                    <input type="number" id="LoanAmount" name="LoanAmount" required>
+                    <input type="number" placeholder="not in decimal" id="LoanAmount" name="LoanAmount" required>
                 </div>
 
                 <div class="form-group">
                     <label for="Loan_Amount_Term">Loan Amount Term:</label>
-                    <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term" required>
+                    <input type="number" id="Loan_Amount_Term" placeholder="Months (must be in multiple of 12)" name="Loan_Amount_Term" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="Credit_History">Credit History:</label>
+                    <label for="Credit_History">Credit Score:</label>
                     <input type="number" id="Credit_History" name="Credit_History" required>
+                    <a class="links" href="https://www.cibil.com/freecibilscore" target="_blank">Don't Know your Credit Score?</a>
                 </div>
 
                 <input type="submit" value="Predict">
