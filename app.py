@@ -66,7 +66,7 @@ def home():
     connection.commit()
     print(loan_amount, loan_id)
 
-    return redirect(url_for('solutions', result=result, credit_history=credit_history, Loan_Term=Loan_Term, coapplicant_income=coapplicant_income))
+    # return redirect(url_for('solutions', result=result, credit_history=credit_history, Loan_Term=Loan_Term, coapplicant_income=coapplicant_income))
 
     # print('Percentage of loan approvals in the test data:', percentage_approvall  )
 
@@ -75,13 +75,9 @@ def home():
     else:
         result = 'approved'
     print(result)
-    data_to_pass = {
-        'credit_history': credit_history,
-        'Loan_Term': Loan_Term,
-        'coapplicant_income': coapplicant_income
-    }
+    # status=result
+    return render_template('after.html', status=result)
 
-    return render_template('after.html', prediction_text=result)
 
 
 @app.route('/solution')
