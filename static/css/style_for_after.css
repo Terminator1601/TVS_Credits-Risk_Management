@@ -1,0 +1,21 @@
+body {
+  background-color: #dfeada;
+}
+
+/* main logo image */
+.main-image {
+  text-align: center;
+}
+
+.confirmation {
+  text-align: center;
+  font-family: "Young Serif", serif;
+}
+
+.confirmation-text{
+  font-family: "Young Serif", serif;
+
+}
+.solution {
+  font-family: "Playfair Display", serif;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/style_for_after.css')}}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static',filename='assets/logo.png')}}"
+      type="image/x-icon"
+    />
+    <title>TVS Credits - Solutions</title>
+  </head>
+  <body>
+    <div class="main-image">
+      <img
+        src="{{ url_for('static', filename='assets/TVS_logo.png') }}"
+        alt="logo"
+        srcset=""
+      />
+    </div>
+    <div class="confirmation">
+      <h1 class="confirmation-head">Loan Approval Solutions</h1>
+      <hr />
+
+      <p class="confirmation-text">
+        Following are the solutions provided by TVS Credits.
+      </p>
+      Credit History: {{ credit_history }}
+      <br />
+      Loan Term: {{ Loan_Term }}
+      <br />
+      Coapplicant Income: {{ coapplicant_income }}
+
+      <a href="/">Go back</a>
+    </div>
+  </body>
+</html>
