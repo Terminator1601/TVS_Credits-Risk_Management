@@ -81,3 +81,32 @@ input,select{
 #Name,#Dependents,#ApplicantIncome,#CoapplicantIncome,#LoanAmount,#Loan_Amount_Term,#Credit_History{
     width: 96%;
 }
+
+label{
+    font-family: 'Young Serif', serif;
+}
+
+
+.form-group {
+    display: flex;
+    /* text-align: center; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label {
+    flex: 1;
+    margin: 5px 0px;
+    margin-right: 10px;
+}
+
+input, select {
+    flex: 3;
+    align-items: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;}

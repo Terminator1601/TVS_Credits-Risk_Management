@@ -1,93 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
     <title>TVS Credits - Risks Management</title>
 </head>
-<style>
-
-</style>
-
 <body>
-    <!-- <h1 class="heading">Loan Prediction</h1> -->
     <div class="main-image">
         <img src="{{ url_for('static', filename='assets/TVS_logo.png') }}" alt="logo" srcset="">
     </div>
     <div class="center">
         <div class="containeer">
             <form method="post" action="/predict">
-                <label for="Name">Name:</label>
-                <input type="text" id="Name" name="Name" required><br><br>
+                <div class="form-group">
+                    <label for="Name">Name:</label>
+                    <input type="text" id="Name" name="Name" required>
+                </div>
 
-                <label for="Gender">Gender:</label>
-                <select name="Gender" id="Gender">
-                    <option value="">Select</option>
-                    <option value="1">Male</option>
-                    <option value="0">Female</option>
+                <div class="form-group">
+                    <label for="Gender">Gender:</label>
+                    <select name="Gender" id="Gender">
+                        <option value="">Select</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
 
-                </select required><br><br>
+                <div class="form-group">
+                    <label for="Married">Married:</label>
+                    <select name="Married" id="Married">
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
 
-                <label for="Married">Married:</label>
-                <select name="Married" id=" Married">
-                    <option value="">Select</option>
+                <div class="form-group">
+                    <label for="Dependents">Dependents:</label>
+                    <input type="text" id="Dependents" name="Dependents" required>
+                </div>
 
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
+                <div class="form-group">
+                    <label for="Education">Education:</label>
+                    <select name="Education" id="Education">
+                        <option value="">Select</option>
+                        <option value="1">Graduate</option>
+                        <option value="0">Not Graduate</option>
+                    </select>
+                </div>
 
-                </select required><br><br>
+                <div class="form-group">
+                    <label for="Employment">Employment:</label>
+                    <select name="Employment" id="Employment">
+                        <option value="">Select</option>
+                        <option value="1">Salaried</option>
+                        <option value="0">Self Employed</option>
+                    </select>
+                </div>
 
-                <label for="Dependents">Dependents:</label>
-                <input type="text" id="Dependents" name="Dependents" required><br><br>
+                <!-- Repeat this block for the remaining fields -->
 
-                <label for="Education">Education:</label>
-                <select name="Education" id="Education">
-                    <option value="">Select</option>
+                <div class="form-group">
+                    <label for="Property_Area">Property Area:</label>
+                    <select name="Property_Area" id="Property_Area">
+                        <option value="">Select</option>
+                        <option value="0">Rural</option>
+                        <option value="1">Semi-Urban</option>
+                        <option value="2">Urban</option>
+                    </select>
+                </div>
 
-                    <option value="1">Graduate</option>
-                    <option value="0">Not Graduate</option>
+                <div class="form-group">
+                    <label for="ApplicantIncome">Applicant Income:</label>
+                    <input type="number" id="ApplicantIncome" name="ApplicantIncome" required>
+                </div>
 
-                </select required><br><br>
-                <label for="Employment">Employment:</label>
-                <select name="Employment" id=" Employment">
-                    <option value="">Select</option>
+                <div class="form-group">
+                    <label for="CoapplicantIncome">Coapplicant Income:</label>
+                    <input type="number" id="CoapplicantIncome" name="CoapplicantIncome" required>
+                </div>
 
-                    <option value="1">Salaried</option>
-                    <option value="0">Self Employed</option>
+                <div class="form-group">
+                    <label for="LoanAmount">Loan Amount:</label>
+                    <input type="number" id="LoanAmount" name="LoanAmount" required>
+                </div>
 
-                </select required><br><br>
-                <label for="Property_Area">Property Area:</label>
-                <select name="Property_Area" id=" Property_Area">
-                    <option value="">Select</option>
-                    <option value="0">Rural</option>
-                    <option value="1">Semi-Urban</option>
-                    <option value="2">Urban</option>
+                <div class="form-group">
+                    <label for="Loan_Amount_Term">Loan Amount Term:</label>
+                    <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term" required>
+                </div>
 
-                </select required><br><br>
-
-                <label for="ApplicantIncome">Applicant Income:</label>
-                <input type="number" id="ApplicantIncome" name="ApplicantIncome" required><br><br>
-
-                <label for="CoapplicantIncome">Coapplicant Income:</label>
-                <input type="number" id="CoapplicantIncome" name="CoapplicantIncome" required><br><br>
-
-                <label for="LoanAmount">Loan Amount:</label>
-                <input type="number" id="LoanAmount" name="LoanAmount" required><br><br>
-
-                <label for="Loan_Amount_Term">Loan Amount Term:</label>
-                <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term" required><br><br>
-
-                <label for="Credit_History">Credit History:</label>
-                <input type="number" id="Credit_History" name="Credit_History" required><br><br>
-
-
+                <div class="form-group">
+                    <label for="Credit_History">Credit History:</label>
+                    <input type="number" id="Credit_History" name="Credit_History" required>
+                </div>
 
                 <input type="submit" value="Predict">
             </form>
         </div>
     </div>
 </body>
-
 </html>
