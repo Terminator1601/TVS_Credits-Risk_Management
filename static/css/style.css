@@ -3,6 +3,13 @@ body{
 }
 
 
+/* main logo image */
+.main-image{
+    text-align: center;
+}
+
+
+
 .center {
   display: flex;
   justify-content: center;
@@ -12,12 +19,13 @@ body{
 .containeer {
     max-width: 500px;
     width: 50%;
-    margin-top: 5rem !important;
+    margin-top: 1rem !important;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f5f5f5;
+    background-color: #fff;
+    
 }
 
 /* Apply styles to headings */
@@ -65,3 +73,11 @@ input[type="submit"]:hover {
 
 /* Apply styles to form container */
 
+/* css in text area */
+
+input,select{
+    background-color: #DFEADA;
+}
+#Name,#Dependents,#ApplicantIncome,#CoapplicantIncome,#LoanAmount,#Loan_Amount_Term,#Credit_History{
+    width: 96%;
+}

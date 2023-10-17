@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
-    <title>Loan Prediction</title>
+    <title>TVS Credits - Risks Management</title>
 </head>
 <style>
 
 </style>
 
 <body>
-    <h1 class="heading">Loan Prediction</h1>
+    <!-- <h1 class="heading">Loan Prediction</h1> -->
+    <div class="main-image">
+        <img src="{{ url_for('static', filename='assets/TVS_logo.png') }}" alt="logo" srcset="">
+    </div>
     <div class="center">
         <div class="containeer">
             <form method="post" action="/predict">
