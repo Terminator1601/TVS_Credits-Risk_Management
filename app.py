@@ -116,9 +116,9 @@ def solution():
                 'loan_status': loan_status
             }
             print(latest_loan_data)
-            years=(loan_amt_term/30)
+            months=(loan_amt_term/30)
             money_to_be_lend = int(
-                ((co_income + a_income) * years))
+                ((co_income + a_income) * months))
             
 
             return render_template('alternative.html',credit_history=credit_history,coapplicant_income=co_income, loan_amt_term=loan_amt_term, money_to_be_lend=money_to_be_lend)
