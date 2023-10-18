@@ -118,10 +118,10 @@ def solution():
             print(latest_loan_data)
             years=(loan_amt_term/30)
             money_to_be_lend = int(
-                ((co_income + a_income) * years)/2)
+                ((co_income + a_income) * years))
             
 
-            return render_template('alternative.html',credit_history=credit_history,coapplicant_income=co_income, money_to_be_lend=money_to_be_lend)
+            return render_template('alternative.html',credit_history=credit_history,coapplicant_income=co_income, loan_amt_term=loan_amt_term, money_to_be_lend=money_to_be_lend)
             # return jsonify(latest_loan_data)
 
         else:

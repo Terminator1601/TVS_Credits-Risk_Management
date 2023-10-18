@@ -47,15 +47,14 @@
         alt="gif"
       />
 
-      {% if credit_history is not none and credit_history <= 750 %}
+      {% if 0 < 750 - credit_history %}
       <div class="sols">
         <p class="confirmation-text">
           <strong>1.</strong> Maximum amount which can be lend is
           {{money_to_be_lend}}
         </p>
         <p class="confirmation-text">
-          <strong>2.</strong> You can change the Co-Applicnt whose annual income <br>
-          is greater than previous i.e., {{coapplicant_income}}.
+          <strong>2.</strong> You Credit Score is very less i.e., {{credit_history}}.
         </p>
       </div>
       {% else %}
@@ -67,6 +66,9 @@
         <p class="confirmation-text">
           <strong>2.</strong> You can change the Co-Applicant whose annual income <br>
           is greater than previous i.e., {{coapplicant_income}}.
+        </p>
+        <p class="confirmation-text">
+          <strong>3.</strong> You need to increase the Loan Duration i.e., {{loan_amt_term}}.
         </p>
       </div>
 
