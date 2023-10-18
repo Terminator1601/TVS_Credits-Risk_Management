@@ -40,9 +40,10 @@ def home():
                           loan_amount, Loan_Term, credit_history, Property]).reshape(1, -1)
     # input_data_reshape = input_data_numpy.reshape(1, -1)
     prediction = model.predict(input_data)
-    # percentage_approval = (X_test_prediction == 'Y').mean() * 100
+    print(prediction)
+    
 
-    if prediction[0] == 0:
+    if prediction[0] == '0':
         status = 'n'
     else:
         status = 'y'
@@ -76,7 +77,7 @@ def home():
         result = 'approved'
     print(result)
     # status=result
-    return render_template('after.html', status=result)
+    return render_template('after.html', status=prediction[0])
 
 
 @app.route('/solution')
@@ -114,11 +115,14 @@ def solution():
                 'credit_history': credit_history,
                 'loan_status': loan_status
             }
+            print(latest_loan_data)
+            years=(loan_amt_term/30)
             money_to_be_lend = int(
-                ((co_income + a_income) * loan_amt_term)/2)
+                ((co_income + a_income) * years)/2)
+            
 
             return render_template('alternative.html',credit_history=credit_history,coapplicant_income=co_income, money_to_be_lend=money_to_be_lend)
-            return jsonify(latest_loan_data)
+            # return jsonify(latest_loan_data)
 
         else:
             return jsonify({'error': 'No data found in the database.'}), 404

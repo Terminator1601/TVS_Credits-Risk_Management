@@ -39,11 +39,11 @@
         draggable="false"
       />
 
-      {% if status == 'approved' %}
+      {% if status == '1' %}
       <p class="confirmation-text">
         Congratulations! Your loan application has been approved.
       </p>
-      {% elif status == 'rejected' %}
+      {% elif status == '0' %}
       <p class="confirmation-text">
         We regret to inform you that your loan application has been rejected.
         <a href="/solution">Show solutions</a>
