@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/pyrhon"
+        }
+    ],
+    "routes":[
+        {
+            "src": "/(.*)",
+            "dest": "app.py"
+        }
+    ]
+}
